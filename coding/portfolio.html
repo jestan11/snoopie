@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PORTFOLIO IT</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree" />
+  <style>
+    body, h1, h2, h3, h4, h5 { font-family: "Figtree", sans-serif; }
+
+    #experiences,
+    #contact,
+    footer {
+      background-color: #626161 !important;
+      color: #f5f5f5 !important;
+    }
+
+    footer {
+      background-color: #5e5e5e !important;
+      color: gray !important;
+    }
+
+    /* Education cards */
+    .education-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+    .education-container::-webkit-scrollbar { display: none; }
+
+    .bground {
+      background-color: #ffffff;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.12);
+      color: #000;
+      width: 220px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform .25s ease;
+      flex-shrink: 0;
+      padding: 12px;
+    }
+
+    .bground img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* SKILLS */
+    .skills-graph {
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .skill { margin-bottom: 25px; }
+    .skill-label {
+      font-size: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+    .bar {
+      background-color: #bfbfbf;
+      height: 30px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .fill {
+      background-color: #ffffff;
+      color: #000000;
+      font-weight: bold;
+      text-align: right;
+      padding-right: 10px;
+      height: 100%;
+      width: var(--percent);
+      line-height: 25px;
+      border-radius: 15px 0 0 15px;
+    }
+
+    /* SLIDESHOW styles */
+    .gallery-container { margin-bottom: 80px; }
+    .container { position: relative; max-width: 900px; margin: auto; }
+    .mySlides { display: none; }
+    .cursor { cursor: pointer; }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next { right: 0; border-radius: 3px 0 0 3px; }
+    .prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.8); }
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    .caption-container {
+      text-align: center;
+      background-color: #333;
+      padding: 2px 16px;
+      color: white;
+    }
+    .row:after { content: ""; display: table; clear: both; }
+    .column { float: left; width: 16.66%; }
+    .demo { opacity: 0.6; }
+    .active, .demo:hover { opacity: 1; }
+
+    .w3-main { margin-left: 300px; }
+    @media (max-width: 900px) {
+      .w3-main { margin-left: 0; }
+    }
+  </style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+  <!-- Sidebar -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+       style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+    <h3 class="w3-padding-64 w3-center"><b>Jesselyn<br>Tan</b></h3>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT ME</a>
+    <a href="#skills" class="w3-bar-item w3-button">SKILLS</a>
+    <a href="#education" class="w3-bar-item w3-button">EDUCATION</a>
+    <a href="#experiences" class="w3-bar-item w3-button">EXPERIENCES</a>
+    <a href="#achievements" class="w3-bar-item w3-button">ACHIEVEMENTS</a>
+    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+  </nav>
+
+  <!-- Topbar for small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">Jess' Portfolio</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  </header>
+
+  <!-- Overlay for small screen sidebar -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()"
+       style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- PAGE CONTENT -->
+  <div class="w3-main">
+
+    <!-- About -->
+    <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+      <h4><b>About Me</b></h4>
+      <img src="howler.jpg" alt="Me" class="w3-image w3-padding-32" width="200" height="200">
+      <div class="w3-content w3-justify" style="max-width:600px; margin: 0 auto;">
+        <h4>Jess</h4>
+        <p>Hello, this is Jes! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus dolor facilis laudantium quae eos soluta molestiae eligendi.</p>
+        <p>mail: jesselyntandaya@gmail.com</p>
+        <p>tel: 08123456789</p>
+        <hr class="w3-opacity">
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-64" id="skills">
+      <h4 class="w3-padding-16">Technical Skills</h4>
+      <div class="skills-graph">
+        <div class="skill"><div class="skill-label">Sleeping</div><div class="bar"><div class="fill" style="--percent: 95%">95%</div></div></div>
+        <div class="skill"><div class="skill-label">Chemistry</div><div class="bar"><div class="fill" style="--percent: 85%">85%</div></div></div>
+        <div class="skill"><div class="skill-label">Bagoyang</div><div class="bar"><div class="fill" style="--percent: 80%">80%</div></div></div>
+      </div>
+      <hr class="w3-opacity">
+    </div>
+
+    <!-- Education -->
+    <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-64" id="education">
+      <h4 class="w3-padding-16">Education</h4>
+      <div class="education-container">
+        <div class="bground">
+          <img src="elem sch.jpeg" alt="Elementary School">
+          <p><b>Elementary School</b></p>
+          <p style="font-size: smaller;">G1 SPK Surabaya, G2-G3 Kartika School Surabaya, G4 Rehobot Christian School, G5-G6 SDH Holland Village</p>
+        </div>
+        <div class="bground">
+          <img src="SDHHV.jpeg" alt="Junior High School">
+          <p><b>Middle School</b></p>
+          <p style="font-size: smaller;">SDH Holland Village</p>
+        </div>
+        <div class="bground">
+          <img src="SDHHV.jpeg" alt="Senior High School">
+          <p><b>High School</b></p>
+          <p style="font-size: smaller;">SDH Holland Village</p>
+        </div>
+      </div>
+      <hr class="w3-opacity">
+    </div>
+
+    <!-- EXPERIENCES (Two galleries) -->
+    <div class="w3-container w3-padding-64" id="experiences">
+      <h3 class="w3-center w3-padding-16">Experiences</h3>
+
+      <!-- Academic Experiences -->
+      <div class="gallery-container">
+        <h4 class="w3-center">Academic Experiences</h4>
+        <div class="container" id="academicGallery">
+          <div class="mySlidesA">
+            <div class="numbertext">1 / 3</div>
+            <img src="academic1.jpg" style="width:100%">
+          </div>
+          <div class="mySlidesA">
+            <div class="numbertext">2 / 3</div>
+            <img src="academic2.jpg" style="width:100%">
+          </div>
+          <div class="mySlidesA">
+            <div class="numbertext">3 / 3</div>
+            <img src="UNSRAT.png" style="width:100%">
+          </div>
+
+          <a class="prev" onclick="plusSlidesA(-1)">❮</a>
+          <a class="next" onclick="plusSlidesA(1)">❯</a>
+
+          <div class="caption-container"><p id="captionA"></p></div>
+
+          <div class="row">
+            <div class="column"><img class="demoA cursor" src="academic1_thumb.jpg" style="width:100%" onclick="currentSlideA(1)" alt="Science Fair 2023"></div>
+            <div class="column"><img class="demoA cursor" src="academic2_thumb.jpg" style="width:100%" onclick="currentSlideA(2)" alt="Math Olympiad"></div>
+            <div class="column"><img class="demoA cursor" src="UNSRAT.png" style="width:100%" onclick="currentSlideA(3)" alt="UNSRAT Chemistry Challenge 2025"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non-Academic Experiences -->
+      <div class="gallery-container">
+        <h4 class="w3-center">Non-Academic Experiences</h4>
+        <div class="container" id="nonAcademicGallery">
+          <div class="mySlidesB">
+            <div class="numbertext">1 / 3</div>
+            <img src="DBL24.jpg" style="width:100%">
+          </div>
+          <div class="mySlidesB">
+            <div class="numbertext">2 / 3</div>
+            <img src="EBENFEST.jpg" style="width:100%">
+          </div>
+          <div class="mySlidesB">
+            <div class="numbertext">3 / 3</div>
+            <img src="DBL25.jpg" style="width:100%">
+          </div>
+
+          <a class="prev" onclick="plusSlidesB(-1)">❮</a>
+          <a class="next" onclick="plusSlidesB(1)">❯</a>
+
+          <div class="caption-container"><p id="captionB"></p></div>
+
+          <div class="row">
+            <div class="column"><img class="demoB cursor" src="DBL24.jpg" style="width:100%" onclick="currentSlideB(1)" alt=" DBL Dance Competition 2024"></div>
+            <div class="column"><img class="demoB cursor" src="EBENFEST.jpg" style="width:100%" onclick="currentSlideB(2)" alt="BENZAR Festival Dance Competition 2025"></div>
+            <div class="column"><img class="demoB cursor" src="DBL25.jpg" style="width:100%" onclick="currentSlideB(3)" alt="DBL Dance Competition 2025"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="w3-opacity">
+    </div>
+
+    <!-- CONTACT -->
+    <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+      <div class="w3-content" style="max-width:600px">
+        <h4 class="w3-center"><b>Contact</b></h4>
+      </div>
+      <footer class="w3-container w3-padding-32 w3-grey">
+        <div class="w3-row-padding">
+          <div class="w3-third">
+            <h3>INFO</h3>
+            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>      
+          </div>
+          <div class="w3-third">
+            <h3>BLOG POSTS</h3>
+            <ul class="w3-ul">
+              <li class="w3-padding-16 w3-hover-black">
+                <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Lorem</span><br>
+                <span>Sed mattis nunc</span>
+              </li>
+              <li class="w3-padding-16 w3-hover-black">
+                <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+                <span class="w3-large">Ipsum</span><br>
+                <span>Praes tinci sed</span>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+  // Sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+  // Academic slideshow
+  let slideIndexA = 1;
+  showSlidesA(slideIndexA);
+  function plusSlidesA(n){showSlidesA(slideIndexA += n);}
+  function currentSlideA(n){showSlidesA(slideIndexA = n);}
+  function showSlidesA(n){
+    let i;
+    let slides=document.getElementsByClassName("mySlidesA");
+    let dots=document.getElementsByClassName("demoA");
+    let captionText=document.getElementById("captionA");
+    if(n>slides.length){slideIndexA=1}
+    if(n<1){slideIndexA=slides.length}
+    for(i=0;i<slides.length;i++){slides[i].style.display="none";}
+    for(i=0;i<dots.length;i++){dots[i].className=dots[i].className.replace(" active","");}
+    slides[slideIndexA-1].style.display="block";
+    dots[slideIndexA-1].className+=" active";
+    captionText.innerHTML=dots[slideIndexA-1].alt;
+  }
+
+  // Non-Academic slideshow
+  let slideIndexB = 1;
+  showSlidesB(slideIndexB);
+  function plusSlidesB(n){showSlidesB(slideIndexB += n);}
+  function currentSlideB(n){showSlidesB(slideIndexB = n);}
+  function showSlidesB(n){
+    let i;
+    let slides=document.getElementsByClassName("mySlidesB");
+    let dots=document.getElementsByClassName("demoB");
+    let captionText=document.getElementById("captionB");
+    if(n>slides.length){slideIndexB=1}
+    if(n<1){slideIndexB=slides.length}
+    for(i=0;i<slides.length;i++){slides[i].style.display="none";}
+    for(i=0;i<dots.length;i++){dots[i].className=dots[i].className.replace(" active","");}
+    slides[slideIndexB-1].style.display="block";
+    dots[slideIndexB-1].className+=" active";
+    captionText.innerHTML=dots[slideIndexB-1].alt;
+  }
+  </script>
+
+</body>
+</html>

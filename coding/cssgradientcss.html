@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kotak{
+            width:250px;
+            height:150px;
+            border-radius:50px 20px 10px 5px;
+            
+        }
+        /* background-image: linear-gradient(arah, warna1, warna2,....) */
+        #kotak1{
+            background-image: linear-gradient(black, blue);
+        }
+        #kotak2{
+            background-image: linear-gradient(to top, red, yellow,orange);
+        }
+        #kotak3{
+            background-image: linear-gradient(to top left, magenta, purple, black);
+        }
+        #kotak4{
+            background-image: linear-gradient(270deg, blue, cyan, white);
+        }
+        #radial1{
+            background-image: radial-gradient(red, orange, yellow);
+        }
+        #radial2{
+            background-image: radial-gradient(red 25%, yellow 50%, orange 70%);
+        }
+        #radial3{
+            background-image: radial-gradient(circle, white, cyan, blue);
+        }
+        #radial4{
+            background-image: radial-gradient(circle farthest-corner at 50%, white, cyan, blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="kotak" id="kotak1"></div>
+    <div class="kotak" id="kotak2"></div>
+    <div class="kotak" id="kotak3"></div>
+    <div class="kotak" id="kotak4"></div>
+    <div class="kotak" id="radial1"></div>
+    <div class="kotak" id="radial2"></div>
+    <div class="kotak" id="radial3"></div>
+    <div class="kotak" id="radial4"></div>
+</body>
+</html>

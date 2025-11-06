@@ -1,0 +1,28 @@
+int red = 12;
+int blue = 10;
+int button = 3;
+int bs = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(12, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(3, INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  bs = digitalRead(button);
+
+  if (bs == 1)
+  {
+    digitalWrite(red, HIGH);
+    digitalWrite(blue, HIGH);
+  }
+  else if (bs == 0)
+  {
+    digitalWrite(red, LOW);
+    digitalWrite(blue, LOW);
+  }
+  
+}

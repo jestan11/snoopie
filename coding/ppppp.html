@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PORTFOLIO IT</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree" />
+  <style>
+    /* Theme colors */
+    :root{
+      --beige: #F5F5DC;
+      --brown: #684226;
+      --cream-acc: #f5f0e6;
+      --card-border: rgba(104,66,38,0.35);
+    }
+
+    body, h1, h2, h3, h4, h5 { font-family: "Figtree", sans-serif; }
+    body { background: var(--beige); color: #000; margin:0; }
+
+    /* Sidebar / Topbar */
+    .w3-sidebar { background: var(--brown) !important; color: #fff !important; }
+    .w3-sidebar a { color: #fff !important; }
+    header.w3-top { background: var(--brown); color: #fff; }
+    header.w3-top a { color: #fff; }
+
+    /* Sections default to beige background with black text */
+    section, .w3-container { background: var(--beige) !important; color: #000 !important; }
+
+    /* Footer uses brown background with white text */
+    footer { background-color: var(--brown) !important; color: #fff !important; }
+
+    /* Education cards */
+    .education-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 10px 0;
+      scrollbar-width: none;
+    }
+    .education-container::-webkit-scrollbar { display: none; }
+
+    .bground {
+      background-color: #fffaf3;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      color: #000;
+      width: 220px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform .25s ease, box-shadow .25s ease;
+      flex-shrink: 0;
+      padding: 14px;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .bground:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+    .bground img { width: 100%; height: 170px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
+
+    /* SKILLS */
+    .skills-graph { width: 80%; max-width: 800px; margin: 0 auto; text-align: left; }
+    .skill { margin-bottom: 18px; }
+    .skill-label { font-size: 17px; letter-spacing: 1px; margin-bottom: 8px; }
+    .bar { background-color: #e6dcc4; height: 30px; border-radius: 15px; overflow: hidden; }
+    .fill { background-color: var(--brown); color: #fff; font-weight: 700; text-align: right; padding-right: 12px; height: 100%; width: var(--percent); line-height: 30px; border-radius: 15px 0 0 15px; }
+
+    /* Elegant image card style + cream frame */
+    img.portfolio-img, img.demoA, img.demoB, img.demoC, img.column-thumb {
+      border-radius: 14px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border: 2px solid var(--card-border);
+      background: linear-gradient(145deg,var(--cream-acc) 0%, #fffaf3 100%) !important;
+      padding: 8px;
+      display:block;
+    }
+
+    /* SLIDESHOW styles */
+    .gallery-container { margin-bottom: 48px; }
+    .container { position: relative; max-width: 900px; margin: 18px auto; }
+    .mySlidesA, .mySlidesB, .mySlidesC {width:300px;height:220px;margin:auto;display:none;}
+.mySlidesA, .mySlidesB, .mySlidesC { display: none; }
+    .cursor { cursor: pointer; }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 45%;
+      width: auto;
+      padding: 12px 14px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 8px;
+      user-select: none;
+      background: var(--brown);
+      border: none;
+    }
+    .next { right: 8px; }
+    .prev { left: 8px; }
+    .prev:hover, .next:hover { background-color: #4f301a; }
+    .numbertext { color: #fff; font-size: 12px; padding: 8px 12px; position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.35); border-radius: 6px; }
+    .caption-container { text-align: center; background-color: transparent; padding: 8px 0; color: var(--brown); font-weight:600; }
+    .row:after { content: ""; display: table; clear: both; }
+    .column { float: left; width: 16.66%; padding: 6px; box-sizing: border-box; }
+    .demo { opacity: 0.7; }
+    .active, .demo:hover { opacity: 1; }
+
+    /* Responsive tweaks */
+    .w3-main { margin-left: 300px; transition: margin-left .2s ease; }
+    @media (max-width: 900px) { .w3-main { margin-left: 0; } .column{ width: 33.333%; }}
+
+    /* Contact / footer styles */
+    .contact-card{ max-width:600px; margin:0 auto; padding:18px; background:#fffaf3; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
+  /* Updated theme colors */
+body { background-color:#C9B59C !important; color:#684226 !important; }
+.w3-container, .w3-main { background-color:#C9B59C !important; color:#684226 !important; }
+#contact, footer { background-color:#684226 !important; color:#C9B59C !important; }
+.fill { background-color:#684226 !important; color:#C9B59C !important; }
+</style>
+  <!-- Define w3_open / w3_close early so header onclick doesn't error -->
+  <script>
+    function w3_open(){
+      var sb = document.getElementById('mySidebar');
+      var ov = document.getElementById('myOverlay');
+      if(!sb) return;
+      sb.style.display = 'block';
+      if(ov) ov.style.display = 'block';
+    }
+    function w3_close(){
+      var sb = document.getElementById('mySidebar');
+      var ov = document.getElementById('myOverlay');
+      if(!sb) return;
+      sb.style.display = 'none';
+      if(ov) ov.style.display = 'none';
+    }
+  </script>
+</head>
+<body class="w3-content" style="max-width:1600px">
+
+  <!-- Sidebar -->
+  <nav class="w3-sidebar w3-bar-block w3-animate-left w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar">
+    <div class="w3-padding-64 w3-center">
+      <h3 style="margin:0;color:#fff"><strong>Jesselyn<br>Tan</strong></h3>
+    </div>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT ME</a>
+    <a href="#skills" class="w3-bar-item w3-button">SKILLS</a>
+    <a href="#education" class="w3-bar-item w3-button">EDUCATION</a>
+    <a href="#experiences" class="w3-bar-item w3-button">EXPERIENCES</a>
+    <a href="#achievements" class="w3-bar-item w3-button">ACHIEVEMENTS</a>
+    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+  </nav>
+
+  <!-- Topbar for small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding" style="color:#753409"><b>Jess' Portfolio</b></span>
+    <a href="javascript:void(0)" class="w3-right w3-button" onclick="w3_open()" aria-label="Open menu" style="color: #753409;">☰</a>
+  </header>
+
+  <!-- Overlay for small screen sidebar -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- PAGE CONTENT -->
+  <div class="w3-main">
+
+    <!-- About -->
+    <section id="about" class="w3-container w3-center w3-padding-32">
+      <h4><b>About Me</b></h4>
+      <div style="display:flex;justify-content:center;"><img src="howler.jpg" alt="Me" class="w3-image w3-padding-32" width="250" height="250" style="object-fit:cover;border-radius:12px;"></div>
+      <div class="w3-content w3-justify" style="max-width:600px; margin: 0 auto;">
+        <h4>Jess</h4>
+        <p>Hello, this is Jess. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus dolor facilis laudantium quae eos soluta molestiae eligendi.</p>
+        <p>mail: <a href="mailto:jesselyntandaya@gmail.com">jesselyntandaya@gmail.com</a></p>
+        <p>tel: 08123456789</p>
+        <hr>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="w3-container w3-center w3-padding-64">
+      <h4 class="w3-padding-16">Technical Skills</h4>
+      <div class="skills-graph">
+        <div class="skill"><div class="skill-label">Sleeping</div><div class="bar"><div class="fill" style="--percent:95%">95%</div></div></div>
+        <div class="skill"><div class="skill-label">Chemistry</div><div class="bar"><div class="fill" style="--percent:85%">85%</div></div></div>
+        <div class="skill"><div class="skill-label">Bagoyang</div><div class="bar"><div class="fill" style="--percent:80%">80%</div></div></div>
+      </div>
+      <hr>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="w3-container w3-center w3-padding-64">
+      <h4 class="w3-padding-16">Education</h4>
+      <div class="education-container">
+        <div class="bground"><img src="elem sch.jpeg" alt="Elementary School"><p><b>Elementary School</b></p><p style="font-size: smaller;">G1 SPK Surabaya <br> G2-G3 Kartika School Surabaya <br> G4 Rehobot Christian School <br> G5-G6 SDH Holland Village</p></div>
+        <div class="bground"><img src="SDHHV.jpeg" alt="Middle School"><p><b>Middle School</b></p><p style="font-size: smaller;">SDH Holland Village</p></div>
+        <div class="bground"><img src="SDHHV.jpeg" alt="High School"><p><b>High School</b></p><p style="font-size: smaller;">SDH Holland Village</p></div>
+      </div>
+      <hr>
+    </section>
+
+    <!-- EXPERIENCES (Two galleries) -->
+    <section id="experiences" class="w3-container w3-padding-64">
+      <h3 class="w3-center w3-padding-16">Experiences</h3>
+
+      <!-- Academic Experiences -->
+      <div class="gallery-container">
+        <h4 class="w3-center">Academic Experiences</h4>
+        <div class="container" id="academicGallery">
+          <div class="mySlidesA">
+            <div class="numbertext">1 / 3</div>
+            <img src="academic1.jpg" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 1">
+          </div>
+          <div class="mySlidesA">
+            <div class="numbertext">2 / 3</div>
+            <img src="academic2.jpg" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 2">
+          </div>
+          <div class="mySlidesA">
+            <div class="numbertext">3 / 3</div>
+            <img src="UNSRAT.png" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="UNSRAT">
+          </div>
+
+          <button class="prev" onclick="plusSlidesA(-1)" aria-label="Previous">❮</button>
+          <button class="next" onclick="plusSlidesA(1)" aria-label="Next">❯</button>
+
+          <div class="caption-container"><p id="captionA"></p></div>
+
+          <div class="row">
+            <div class="column"><img class="demoA column-thumb" src="academic1_thumb.jpg" style="width:100%" onclick="currentSlideA(1)" alt="Science Fair 2023"></div>
+            <div class="column"><img class="demoA column-thumb" src="academic2_thumb.jpg" style="width:100%" onclick="currentSlideA(2)" alt="Math Olympiad"></div>
+            <div class="column"><img class="demoA column-thumb" src="UNSRAT.png" style="width:100%" onclick="currentSlideA(3)" alt="UNSRAT Chemistry Challenge 2025"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non-Academic Experiences -->
+      <div class="gallery-container">
+        <h4 class="w3-center">Non-Academic Experiences</h4>
+        <div class="container" id="nonAcademicGallery">
+          <div class="mySlidesB">
+            <div class="numbertext">1 / 3</div>
+            <img src="DBL24.jpg" class="portfolio-img" style="width:100%" alt="DBL24">
+          </div>
+          <div class="mySlidesB">
+            <div class="numbertext">2 / 3</div>
+            <img src="EBENFEST.jpg" class="portfolio-img" style="width:100%" alt="EBENFEST">
+          </div>
+          <div class="mySlidesB">
+            <div class="numbertext">3 / 3</div>
+            <img src="DBL25.jpg" class="portfolio-img" style="width:100%" alt="DBL25">
+          </div>
+
+          <button class="prev" onclick="plusSlidesB(-1)" aria-label="Previous">❮</button>
+          <button class="next" onclick="plusSlidesB(1)" aria-label="Next">❯</button>
+
+          <div class="caption-container"><p id="captionB"></p></div>
+
+          <div class="row">
+            <div class="column"><img class="demoB column-thumb" src="DBL24.jpg" style="width:100%" onclick="currentSlideB(1)" alt="DBL Dance Competition 2024"></div>
+            <div class="column"><img class="demoB column-thumb" src="EBENFEST.jpg" style="width:100%" onclick="currentSlideB(2)" alt="BENZAR Festival Dance Competition 2025"></div>
+            <div class="column"><img class="demoB column-thumb" src="DBL25.jpg" style="width:100%" onclick="currentSlideB(3)" alt="DBL Dance Competition 2025"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+    </section>
+
+    <!-- ACHIEVEMENTS (Certificate slider) -->
+    <section id="achievements" class="w3-container w3-center w3-padding-64">
+      <h3 class="w3-padding-16">Achievements</h3>
+      <div class="container" id="achievementGallery">
+        <div class="mySlidesC">
+          <div class="numbertext">1 / 3</div>
+          <img src="cert1.jpg" class="portfolio-img" style="width:100%" alt="Certificate 1">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">2 / 3</div>
+          <img src="cert2.jpg" class="portfolio-img" style="width:100%" alt="Certificate 2">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">3 / 3</div>
+          <img src="cert3.jpg" class="portfolio-img" style="width:100%" alt="Certificate 3">
+        </div>
+
+        <button class="prev" onclick="plusSlidesC(-1)" aria-label="Previous">❮</button>
+        <button class="next" onclick="plusSlidesC(1)" aria-label="Next">❯</button>
+
+        <div class="caption-container"><p id="captionC"></p></div>
+
+        <div class="row">
+          <div class="column"><img class="demoC column-thumb" src="cert1.jpg" style="width:100%" onclick="currentSlideC(1)" alt="Certificate of Excellence"></div>
+          <div class="column"><img class="demoC column-thumb" src="cert2.jpg" style="width:100%" onclick="currentSlideC(2)" alt="Participation Award"></div>
+          <div class="column"><img class="demoC column-thumb" src="cert3.jpg" style="width:100%" onclick="currentSlideC(3)" alt="Outstanding Achievement"></div>
+        </div>
+      </div>
+      <hr>
+    </section>
+
+<!-- CONTACT -->
+    <section id="contact" class="w3-container w3-padding-32">
+      <div class="w3-content contact-card">
+        <h4 class="w3-center"><b>Contact</b></h4>
+        <p class="w3-center">Feel free to reach out — email or phone works best.</p>
+        <p class="w3-center">Email: <a href="mailto:jesselyntandaya@gmail.com">jesselyntandaya@gmail.com</a> | Tel: 08123456789</p>
+      </div>
+      <br>
+      <footer class="w3-container w3-padding-32">
+        <div class="w3-row-padding">
+          <div class="w3-third">
+            <h3 style="color:#fff">INFO</h3>
+            <p style="color:#fff">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+          </div>
+          <div class="w3-third">
+            <h3 style="color:#fff">BLOG POSTS</h3>
+            <ul class="w3-ul" style="background:transparent">
+              <li class="w3-padding-16" style="background:transparent">
+                <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px;border-radius:6px">
+                <span class="w3-large" style="color:#fff">Lorem</span><br>
+                <span style="color:#fff">Sed mattis nunc</span>
+              </li>
+              <li class="w3-padding-16" style="background:transparent">
+                <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px;border-radius:6px">
+                <span class="w3-large" style="color:#fff">Ipsum</span><br>
+                <span style="color:#fff">Praes tinci sed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+  </div>
+
+  <!-- Scripts: slides + sidebar already defined earlier -->
+  <script>
+    // Academic slideshow
+    let slideIndexA = 1;
+    showSlidesA(slideIndexA);
+    function plusSlidesA(n){showSlidesA(slideIndexA += n);} 
+    function currentSlideA(n){showSlidesA(slideIndexA = n);} 
+    function showSlidesA(n){
+      let i;
+      let slides = document.getElementsByClassName("mySlidesA");
+      let dots = document.getElementsByClassName("demoA");
+      let captionText = document.getElementById("captionA");
+      if(slides.length===0) return;
+      if(n>slides.length){slideIndexA=1}
+      if(n<1){slideIndexA=slides.length}
+      for(i=0;i<slides.length;i++){slides[i].style.display="none";}
+      for(i=0;i<dots.length;i++){ dots[i].className = dots[i].className.replace(" active", ""); }
+      slides[slideIndexA-1].style.display="block";
+      if(dots[slideIndexA-1]) dots[slideIndexA-1].className += " active";
+      if(captionText && dots[slideIndexA-1]) captionText.innerHTML = dots[slideIndexA-1].alt || "";
+    }
+
+    // Non-Academic slideshow
+    let slideIndexB = 1;
+    showSlidesB(slideIndexB);
+    function plusSlidesB(n){showSlidesB(slideIndexB += n);} 
+    function currentSlideB(n){showSlidesB(slideIndexB = n);} 
+    function showSlidesB(n){
+      let i;
+      let slides = document.getElementsByClassName("mySlidesB");
+      let dots = document.getElementsByClassName("demoB");
+      let captionText = document.getElementById("captionB");
+      if(slides.length===0) return;
+      if(n>slides.length){slideIndexB=1}
+      if(n<1){slideIndexB=slides.length}
+      for(i=0;i<slides.length;i++){slides[i].style.display="none";}
+      for(i=0;i<dots.length;i++){ dots[i].className = dots[i].className.replace(" active", ""); }
+      slides[slideIndexB-1].style.display="block";
+      if(dots[slideIndexB-1]) dots[slideIndexB-1].className += " active";
+      if(captionText && dots[slideIndexB-1]) captionText.innerHTML = dots[slideIndexB-1].alt || "";
+    }
+
+    // Achievements slideshow
+    let slideIndexC = 1;
+    showSlidesC(slideIndexC);
+    function plusSlidesC(n){showSlidesC(slideIndexC += n);} 
+    function currentSlideC(n){showSlidesC(slideIndexC = n);} 
+    function showSlidesC(n){
+      let i;
+      let slides = document.getElementsByClassName("mySlidesC");
+      let dots = document.getElementsByClassName("demoC");
+      let captionText = document.getElementById("captionC");
+      if(slides.length===0) return;
+      if(n>slides.length){slideIndexC=1}
+      if(n<1){slideIndexC=slides.length}
+      for(i=0;i<slides.length;i++){slides[i].style.display="none";}
+      for(i=0;i<dots.length;i++){ dots[i].className = dots[i].className.replace(" active", ""); }
+      slides[slideIndexC-1].style.display="block";
+      if(dots[slideIndexC-1]) dots[slideIndexC-1].className += " active";
+      if(captionText && dots[slideIndexC-1]) captionText.innerHTML = dots[slideIndexC-1].alt || "";
+    }
+
+    // Small accessibility: allow keyboard arrows to navigate currently focused gallery
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){
+        // try all galleries; they will early-return if not present
+        plusSlidesA(-1); plusSlidesB(-1); plusSlidesC(-1);
+      } else if(e.key === 'ArrowRight'){
+        plusSlidesA(1); plusSlidesB(1); plusSlidesC(1);
+      }
+    });
+  </script>
+<script>
+// Auto slide for Achievements gallery every 4 seconds
+(function(){
+  let idx = 0;
+  const gallery = document.getElementById('achievements-gallery');
+  if(!gallery) return;
+  const slides = gallery.getElementsByClassName('mySlides');
+  function autoSlide(){
+    for(let s of slides) s.style.display = 'none';
+    idx = (idx+1) % slides.length;
+    slides[idx].style.display = 'block';
+  }
+  // Initialize
+  if(slides.length>0){ slides[0].style.display = 'block'; }
+  setInterval(autoSlide, 4000);
+})();
+</script>
+</body>
+</html>
