@@ -76,6 +76,24 @@
     .bground:hover{ transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
 
     .bground img { width: 100%; height: 170px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
+    .strengths-weaknesses-section {
+      width: 100%;
+      padding: 0 16px;
+      overflow-x: hidden:
+    }
+  .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  }
+  
+  .card {
+    flex: 1 1 calc(50% - 24px);
+    max-width: 200px;
+    /* optional styling: background, padding, border-radius */
+  }
+    
 
     /* SKILLS */
     .skills-graph { width: 80%; max-width: 800px; margin: 0 auto; text-align: left; }
@@ -126,7 +144,8 @@
 
     /* Responsive tweaks */
     .w3-main { margin-left: 300px; transition: margin-left .2s ease; }
-    @media (max-width: 900px) { .w3-main { margin-left: 0; } .column{ width: 33.333%; }}
+    @media (max-width: 480px) { .card { flex: 1 1 100%; max-width: none; }
+      { .w3-main { margin-left: 0; } .column{ width: 33.333%; }}
 
     /* Contact / footer styles */
     .contact-card{ max-width:600px; margin:0 auto; padding:18px; background:#fffaf3; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
@@ -513,7 +532,7 @@ body { background-color:#ffffff !important; color:#ffffff !important; }
           <!-- Scrollable Preview Box -->
           <div style="width:90%; height:80%; margin-top:15px; overflow-y:auto; border-radius:8px; border:1px solid #3a2a20;">
             <iframe 
-              src="https://drive.google.com/file/d/10enYMMkh5USqMgV7hwmHMrKat1YYbxVG/preview"
+              src="https://drive.google.com/file/d/1IU5clR6mefd1qdDpzfacNJo7R4iZ4zbl/preview"
               style="width:100%; height:100%; border:none;">
             </iframe>
           </div>
