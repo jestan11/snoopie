@@ -6,8 +6,8 @@
   <title>PORTFOLIO IT</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree" />
-  
   <style>
+    /* Theme colors */
     :root{
       --beige: #F5F5DC;
       --brown: #412912;
@@ -18,15 +18,19 @@
     body, h1, h2, h3, h4, h5 { font-family: "Figtree", sans-serif; }
     body { background: var(--beige); color: #000000; margin:0; }
 
+    /* Sidebar / Topbar */
     .w3-sidebar { background: var(--brown) !important; color: #fff !important; }
     .w3-sidebar a { color: #fff !important; }
     header.w3-top { background: var(--brown); color: #fff; }
     header.w3-top a { color: #fff; }
 
+    /* Sections default to beige background with black text */
     section, .w3-container { background: var(--beige) !important; color: #000000 !important; }
 
+    /* Footer uses brown background with white text */
     footer { background-color: #120903 !important; color: #f8f5f5 !important; }
 
+    /* Education cards */
     .education-container {
       display: flex;
       justify-content: center;
@@ -55,12 +59,14 @@
 
     .bground img { width: 100%; height: 170px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
 
+    /* SKILLS */
     .skills-graph { width: 80%; max-width: 800px; margin: 0 auto; text-align: left; }
     .skill { margin-bottom: 18px; }
     .skill-label { font-size: 17px; letter-spacing: 1px; margin-bottom: 8px; }
     .bar { background-color: #dad0b9; height: 30px; border-radius: 15px; overflow: hidden; }
     .fill { background-color: var(--brown); color: #fff; font-weight: 700; text-align: right; padding-right: 12px; height: 100%; width: var(--percent); line-height: 30px; border-radius: 15px 0 0 15px; }
 
+    /* Elegant image card style + cream frame */
     img.portfolio-img, img.demoA, img.demoB, img.demoC, img.column-thumb {
       border-radius: 14px !important;
       box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -70,22 +76,17 @@
       display:block;
     }
 
+    /* SLIDESHOW styles */
     .gallery-container { margin-bottom: 48px; }
     .container { position: relative; max-width: 900px; margin: 18px auto; }
-
-    .mySlidesA, .mySlidesB, .mySlidesC {
-      width:300px;
-      height:220px;
-      margin:auto;
-      display:none;
-    }
-
+    .mySlidesA, .mySlidesB, .mySlidesC {width:300px;height:220px;margin:auto;display:none;}
+.mySlidesA, .mySlidesB, .mySlidesC { display: none; }
     .cursor { cursor: pointer; }
-
     .prev, .next {
       cursor: pointer;
       position: absolute;
       top: 45%;
+      width: auto;
       padding: 12px 14px;
       color: #fff;
       font-weight: bold;
@@ -97,120 +98,27 @@
     }
     .next { right: 8px; }
     .prev { left: 8px; }
-
+    .prev:hover, .next:hover { background-color: #eaeaea; }
     .numbertext { color: #fff; font-size: 12px; padding: 8px 12px; position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.35); border-radius: 6px; }
-
-    .caption-container { text-align: center; color: var(--brown); font-weight:600; }
-
+    .caption-container { text-align: center; background-color: transparent; padding: 8px 0; color: var(--brown); font-weight:600; }
     .row:after { content: ""; display: table; clear: both; }
     .column { float: left; width: 16.66%; padding: 6px; box-sizing: border-box; }
     .demo { opacity: 0.7; }
     .active, .demo:hover { opacity: 1; }
 
+    /* Responsive tweaks */
     .w3-main { margin-left: 300px; transition: margin-left .2s ease; }
     @media (max-width: 900px) { .w3-main { margin-left: 0; } .column{ width: 33.333%; }}
 
+    /* Contact / footer styles */
     .contact-card{ max-width:600px; margin:0 auto; padding:18px; background:#fffaf3; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
-
-    body { background-color:#ffffff !important; color:#ffffff !important; }
-    .w3-container, .w3-main { background-color:#e8e5e1 !important; color:#442a18 !important; }
-    #contact, footer { background-color:#3e2713 !important; color:#3b352d !important; }
-    .fill { background-color:#3c2312 !important; color:#dbcdbc !important; }
-
-
-    /* ------- ADDED RESPONSIVE FIXES -------- */
-    body {
-      font-size: 16px;
-    }
-
-    @media (max-width: 900px) {
-      .w3-main {
-        margin-left: 0 !important;
-        padding: 0 12px;
-      }
-    }
-
-    .education-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .bground {
-      width: 260px;
-    }
-
-    @media (max-width: 500px) {
-      .bground {
-        width: 90%;
-      }
-    }
-
-    #strengths-weaknesses .grid-3,
-    #strengths-weaknesses div[style*="display:grid"] {
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 900px;
-    }
-
-    .mySlidesA, .mySlidesB, .mySlidesC {
-      width: 100%;
-      height: auto !important;
-    }
-
-    .portfolio-img {
-      width: 100%;
-      height: auto !important;
-    }
-
-    .column {
-      width: 25%;
-    }
-
-    @media (max-width: 600px) {
-      .column {
-        width: 33.33%;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .column {
-        width: 50%;
-      }
-    }
-
-    .prev, .next {
-      top: 45%;
-      font-size: 18px;
-      padding: 10px 12px;
-    }
-
-    @media (max-width: 450px) {
-      .prev, .next {
-        top: 40%;
-        font-size: 14px;
-        padding: 6px 8px;
-      }
-    }
-
-    #about img {
-      max-width: 200px;
-      width: 70%;
-      height: auto;
-    }
-
-    .skills-graph {
-      width: 95%;
-    }
-
-    .contact-card {
-      width: 90%;
-    }
-  </style>
-
+  /* Updated theme colors */
+body { background-color:#ffffff !important; color:#ffffff !important; }
+.w3-container, .w3-main { background-color:#e8e5e1 !important; color:#442a18 !important; }
+#contact, footer { background-color:#3e2713 !important; color:#3b352d !important; }
+.fill { background-color:#3c2312 !important; color:#dbcdbc !important; }
+</style>
+  <!-- Define w3_open / w3_close early so header onclick doesn't error -->
   <script>
     function w3_open(){
       var sb = document.getElementById('mySidebar');
@@ -228,7 +136,6 @@
     }
   </script>
 </head>
-
 <body class="w3-content" style="max-width:1600px">
 
   <!-- Sidebar -->
