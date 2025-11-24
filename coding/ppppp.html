@@ -10,13 +10,13 @@
     /* Theme colors */
     :root{
       --beige: #F5F5DC;
-      --brown: #684226;
+      --brown: #412912;
       --cream-acc: #f5f0e6;
-      --card-border: rgba(104,66,38,0.35);
+      --card-border: rgba(19, 19, 17, 0.35);
     }
 
     body, h1, h2, h3, h4, h5 { font-family: "Figtree", sans-serif; }
-    body { background: var(--beige); color: #000; margin:0; }
+    body { background: var(--beige); color: #000000; margin:0; }
 
     /* Sidebar / Topbar */
     .w3-sidebar { background: var(--brown) !important; color: #fff !important; }
@@ -25,10 +25,10 @@
     header.w3-top a { color: #fff; }
 
     /* Sections default to beige background with black text */
-    section, .w3-container { background: var(--beige) !important; color: #000 !important; }
+    section, .w3-container { background: var(--beige) !important; color: #000000 !important; }
 
     /* Footer uses brown background with white text */
-    footer { background-color: var(--brown) !important; color: #fff !important; }
+    footer { background-color: #120903 !important; color: #f8f5f5 !important; }
 
     /* Education cards */
     .education-container {
@@ -63,7 +63,7 @@
     .skills-graph { width: 80%; max-width: 800px; margin: 0 auto; text-align: left; }
     .skill { margin-bottom: 18px; }
     .skill-label { font-size: 17px; letter-spacing: 1px; margin-bottom: 8px; }
-    .bar { background-color: #e6dcc4; height: 30px; border-radius: 15px; overflow: hidden; }
+    .bar { background-color: #dad0b9; height: 30px; border-radius: 15px; overflow: hidden; }
     .fill { background-color: var(--brown); color: #fff; font-weight: 700; text-align: right; padding-right: 12px; height: 100%; width: var(--percent); line-height: 30px; border-radius: 15px 0 0 15px; }
 
     /* Elegant image card style + cream frame */
@@ -98,7 +98,7 @@
     }
     .next { right: 8px; }
     .prev { left: 8px; }
-    .prev:hover, .next:hover { background-color: #4f301a; }
+    .prev:hover, .next:hover { background-color: #eaeaea; }
     .numbertext { color: #fff; font-size: 12px; padding: 8px 12px; position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.35); border-radius: 6px; }
     .caption-container { text-align: center; background-color: transparent; padding: 8px 0; color: var(--brown); font-weight:600; }
     .row:after { content: ""; display: table; clear: both; }
@@ -113,10 +113,10 @@
     /* Contact / footer styles */
     .contact-card{ max-width:600px; margin:0 auto; padding:18px; background:#fffaf3; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.06); }
   /* Updated theme colors */
-body { background-color:#C9B59C !important; color:#684226 !important; }
-.w3-container, .w3-main { background-color:#C9B59C !important; color:#684226 !important; }
-#contact, footer { background-color:#684226 !important; color:#C9B59C !important; }
-.fill { background-color:#684226 !important; color:#C9B59C !important; }
+body { background-color:#ffffff !important; color:#ffffff !important; }
+.w3-container, .w3-main { background-color:#e8e5e1 !important; color:#442a18 !important; }
+#contact, footer { background-color:#3e2713 !important; color:#3b352d !important; }
+.fill { background-color:#3c2312 !important; color:#dbcdbc !important; }
 </style>
   <!-- Define w3_open / w3_close early so header onclick doesn't error -->
   <script>
@@ -139,22 +139,33 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
 <body class="w3-content" style="max-width:1600px">
 
   <!-- Sidebar -->
-  <nav class="w3-sidebar w3-bar-block w3-animate-left w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar">
+  <nav class="w3-sidebar w3-bar-block w3-animate-left w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold;background:#000;overflow:hidden;"id="mySidebar">
     <div class="w3-padding-64 w3-center">
-      <h3 style="margin:0;color:#fff"><strong>Jesselyn<br>Tan</strong></h3>
+      <h3 style="margin:0;color:#fff;"><strong>Jesselyn<br>Tandaya</strong></h3>
     </div>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-    <a href="#about" class="w3-bar-item w3-button">ABOUT ME</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT ME</a> 
+    <a href="#strengths-weaknesses" class="w3-bar-item w3-button">STRENGTHS & WEAKNESSES</a>
     <a href="#skills" class="w3-bar-item w3-button">SKILLS</a>
     <a href="#education" class="w3-bar-item w3-button">EDUCATION</a>
     <a href="#experiences" class="w3-bar-item w3-button">EXPERIENCES</a>
     <a href="#achievements" class="w3-bar-item w3-button">ACHIEVEMENTS</a>
     <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+    <div style="padding: top 10px;">
+    <img src="icnav.png"
+         style="
+            width:100%;
+            height:auto;
+            max-height:15vh;     
+            object-fit:contain;
+            border-radius:12px;
+            display:block;">
+  </div>
   </nav>
 
   <!-- Topbar for small screens -->
   <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding-16">
-    <span class="w3-left w3-padding" style="color:#753409"><b>Jess' Portfolio</b></span>
+    <span class="w3-left w3-padding" style="color:#381c09"><b>Jesselyn Tandaya</b></span>
     <a href="javascript:void(0)" class="w3-right w3-button" onclick="w3_open()" aria-label="Open menu" style="color: #753409;">☰</a>
   </header>
 
@@ -167,30 +178,89 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
     <!-- About -->
     <section id="about" class="w3-container w3-center w3-padding-32">
       <h4><b>About Me</b></h4>
-      <div style="display:flex;justify-content:center;"><img src="howler.jpg" alt="Me" class="w3-image w3-padding-32" width="250" height="250" style="object-fit:cover;border-radius:12px;"></div>
+      <div style="display:flex;justify-content:center;"><img src="1.jpg" alt="Me" class="w3-image w3-padding-32" width="250" height="250" style="object-fit:cover;border-radius:12px;"></div>
       <div class="w3-content w3-justify" style="max-width:600px; margin: 0 auto;">
-        <h4>Jess</h4>
-        <p>Hello, this is Jess. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus dolor facilis laudantium quae eos soluta molestiae eligendi.</p>
-        <p>mail: <a href="mailto:jesselyntandaya@gmail.com">jesselyntandaya@gmail.com</a></p>
-        <p>tel: 08123456789</p>
+        <h4>I'm Jesselyn</h4>
+        <p>I'm a seventeen year old student from Dian Harapan Holland Village Manado School who loves exploring design and creative ideas. Throughout my time here, I’ve discovered more about my interests and what I want to pursue to achieve my goal of becoming an architect. This website is where I share my journey, achievements, and experiences as I prepare for a career in architecture.</p>
+        <p>Email: <a href="mailto:jesselyntandaya@gmail.com">jesselyntandaya@gmail.com</a></p>
+        <p>Phone: 08123456789</p>
         <hr>
       </div>
     </section>
 
+   <!-- Strengths & Weaknesses Section (Flexbox 3 + 3 bars) -->
+<section id="strengths-weaknesses" class="w3-container w3-center w3-padding-64" style="background-color:#C9B59C;color:#684226;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center;">
+  <img src="wb (1).png"
+       style="width:50px; border-radius:6px;">
+  <h4 class="w3-padding-16" style="margin: 0;"><b>Strengths & Weaknesses</b></h4>
+  </div>
+
+  <div style="max-width:1000px;margin:auto;display:flex;flex-direction:column;gap:48px;">
+
+    <!-- Strengths -->
+    <div>
+    
+      <h5 style="margin-bottom:20px;color:#684226;">Strengths</h5>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Exploring New Ideas</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Genuine Enthusiasm</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Connecting With Others</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Creative Problem-Solving</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Flexible Approach</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Inspiring Communication</h6></div>
+      </div></div>
+
+    <!-- Weaknesses -->
+    <div>
+      <h5 style="margin-bottom:20px;color:#684226;">Weaknesses</h5>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Putting Off Routine Tasks</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Starting but Not Finishing</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Easily Bored by Structure</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Skipping Over Practical Details</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Overcommitting Your Energy</h6></div>
+        <div style="background:#fffaf3;padding:18px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,0.08);border:1px solid #e6dcc4;">
+          <h6 style="margin-top:0;color:#684226;">Taking Criticism Personally</h6></div>
+      </div></div>
+
+  </div>
+</section>
+
     <!-- Skills -->
     <section id="skills" class="w3-container w3-center w3-padding-64">
-      <h4 class="w3-padding-16">Technical Skills</h4>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px;">
+        <img src="wb (2).png" style="width:55px; height:55px; border-radius:50%;">
+        <h4 style="margin:0; font-weight:700; text-align:center;">Skills</h4>
+      </div>
+
       <div class="skills-graph">
-        <div class="skill"><div class="skill-label">Sleeping</div><div class="bar"><div class="fill" style="--percent:95%">95%</div></div></div>
-        <div class="skill"><div class="skill-label">Chemistry</div><div class="bar"><div class="fill" style="--percent:85%">85%</div></div></div>
-        <div class="skill"><div class="skill-label">Bagoyang</div><div class="bar"><div class="fill" style="--percent:80%">80%</div></div></div>
+        <div class="skill"><div class="skill-label">Art & Illustration</div><div class="bar"><div class="fill" style="--percent:80%">80%</div></div></div>
+        <div class="skill"><div class="skill-label">Creative Design</div><div class="bar"><div class="fill" style="--percent:85%">85%</div></div></div>
+        <div class="skill"><div class="skill-label">Coding & Logic</div><div class="bar"><div class="fill" style="--percent:69%">69%</div></div></div>
+        <div class="skill"><div class="skill-label">Dance Skills</div><div class="bar"><div class="fill" style="--percent:80%">80%</div></div></div>
       </div>
       <hr>
     </section>
 
     <!-- Education -->
     <section id="education" class="w3-container w3-center w3-padding-64">
-      <h4 class="w3-padding-16">Education</h4>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px;">
+        <img src="wb (3).png" style="width:55px; height:55px; border-radius:50%;">
+        <h4 style="margin:0; font-weight:700; text-align:center;">Education</h4>
+      </div>
+
       <div class="education-container">
         <div class="bground"><img src="elem sch.jpeg" alt="Elementary School"><p><b>Elementary School</b></p><p style="font-size: smaller;">G1 SPK Surabaya <br> G2-G3 Kartika School Surabaya <br> G4 Rehobot Christian School <br> G5-G6 SDH Holland Village</p></div>
         <div class="bground"><img src="SDHHV.jpeg" alt="Middle School"><p><b>Middle School</b></p><p style="font-size: smaller;">SDH Holland Village</p></div>
@@ -201,23 +271,27 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
 
     <!-- EXPERIENCES (Two galleries) -->
     <section id="experiences" class="w3-container w3-padding-64">
-      <h3 class="w3-center w3-padding-16">Experiences</h3>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px;">
+      <img src="wb (4).png" style="width:55px; height:55px; border-radius:50%;">
+      <h4 style="margin:0; font-weight:700; text-align:center;">Experiences</h4>
+      </div>
 
+      
       <!-- Academic Experiences -->
       <div class="gallery-container">
         <h4 class="w3-center">Academic Experiences</h4>
         <div class="container" id="academicGallery">
           <div class="mySlidesA">
             <div class="numbertext">1 / 3</div>
-            <img src="academic1.jpg" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 1">
+            <img src="SF.jpg" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 1">
           </div>
           <div class="mySlidesA">
             <div class="numbertext">2 / 3</div>
-            <img src="academic2.jpg" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 2">
+            <img src="OSN.jpg" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 2">
           </div>
           <div class="mySlidesA">
             <div class="numbertext">3 / 3</div>
-            <img src="UNSRAT.png" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="UNSRAT">
+            <img src="UNSRAT.png" style="width:100%;height:220px;object-fit:cover;" class="portfolio-img" style="width:100%" alt="Academic 3">
           </div>
 
           <button class="prev" onclick="plusSlidesA(-1)" aria-label="Previous">❮</button>
@@ -226,9 +300,9 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
           <div class="caption-container"><p id="captionA"></p></div>
 
           <div class="row">
-            <div class="column"><img class="demoA column-thumb" src="academic1_thumb.jpg" style="width:100%" onclick="currentSlideA(1)" alt="Science Fair 2023"></div>
-            <div class="column"><img class="demoA column-thumb" src="academic2_thumb.jpg" style="width:100%" onclick="currentSlideA(2)" alt="Math Olympiad"></div>
-            <div class="column"><img class="demoA column-thumb" src="UNSRAT.png" style="width:100%" onclick="currentSlideA(3)" alt="UNSRAT Chemistry Challenge 2025"></div>
+            <div class="column"><img class="demoA column-thumb" src="SF.jpg" style="width:100%;height:100px;object-fit:cover;" onclick="currentSlideA(1)" alt="Science Fair 2024"></div>
+            <div class="column"><img class="demoA column-thumb" src="OSN.jpg" style="width:100%;height:100px;object-fit:cover;" onclick="currentSlideA(2)" alt="Chemistry Olympiad"></div>
+            <div class="column"><img class="demoA column-thumb" src="UNSRAT.png" style="width:100%;height:100px;object-fit:cover;" onclick="currentSlideA(3)" alt="UNSRAT Chemistry Challenge 2025"></div>
           </div>
         </div>
       </div>
@@ -238,15 +312,32 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
         <h4 class="w3-center">Non-Academic Experiences</h4>
         <div class="container" id="nonAcademicGallery">
           <div class="mySlidesB">
-            <div class="numbertext">1 / 3</div>
+            <div class="numbertext">1 / 4</div>
+            <div style="display:flex; justify-content:center; align-items:center;">
+              <iframe 
+                width="100%" 
+                height="200"
+                style="border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.25);"
+                src="https://www.youtube.com/embed/D9onOuNMBYs"
+                title="DBL 2025"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="mySlidesB">
+            <div class="numbertext">2 / 4</div>
             <img src="DBL24.jpg" class="portfolio-img" style="width:100%" alt="DBL24">
           </div>
+
           <div class="mySlidesB">
-            <div class="numbertext">2 / 3</div>
+            <div class="numbertext">3 / 4</div>
             <img src="EBENFEST.jpg" class="portfolio-img" style="width:100%" alt="EBENFEST">
           </div>
+
           <div class="mySlidesB">
-            <div class="numbertext">3 / 3</div>
+            <div class="numbertext">4 / 4</div>
             <img src="DBL25.jpg" class="portfolio-img" style="width:100%" alt="DBL25">
           </div>
 
@@ -256,31 +347,83 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
           <div class="caption-container"><p id="captionB"></p></div>
 
           <div class="row">
-            <div class="column"><img class="demoB column-thumb" src="DBL24.jpg" style="width:100%" onclick="currentSlideB(1)" alt="DBL Dance Competition 2024"></div>
-            <div class="column"><img class="demoB column-thumb" src="EBENFEST.jpg" style="width:100%" onclick="currentSlideB(2)" alt="BENZAR Festival Dance Competition 2025"></div>
-            <div class="column"><img class="demoB column-thumb" src="DBL25.jpg" style="width:100%" onclick="currentSlideB(3)" alt="DBL Dance Competition 2025"></div>
+            <div class="column">
+              <img 
+                class="demoB column-thumb"
+                src="thumb.jpg"
+                style="width:100%"
+                onclick="currentSlideB(1)"
+                alt="Dance Performance Video"
+              >
+            </div>
+            <div class="column"><img class="demoB column-thumb" src="DBL24.jpg" style="width:100%" onclick="currentSlideB(2)" alt="DBL Dance Competition 2024"></div>
+            <div class="column"><img class="demoB column-thumb" src="EBENFEST.jpg" style="width:100%" onclick="currentSlideB(3)" alt="BENZAR Festival Dance Competition 2025"></div>
+            <div class="column"><img class="demoB column-thumb" src="DBL25.jpg" style="width:100%" onclick="currentSlideB(4)" alt="DBL Dance Competition 2025"></div>
+            
           </div>
+
         </div>
-      </div>
+    </div>
+
 
       <hr>
     </section>
 
     <!-- ACHIEVEMENTS (Certificate slider) -->
     <section id="achievements" class="w3-container w3-center w3-padding-64">
-      <h3 class="w3-padding-16">Achievements</h3>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px;">
+        <img src="wb (1).png" style="width:55px; height:55px; border-radius:50%;">
+        <h4 style="margin:0; font-weight:700; text-align:center;">Achievements </h4>
+      </div>
+
       <div class="container" id="achievementGallery">
         <div class="mySlidesC">
-          <div class="numbertext">1 / 3</div>
-          <img src="cert1.jpg" class="portfolio-img" style="width:100%" alt="Certificate 1">
+          <div class="numbertext">1 / 10</div>
+          <img src="ser1.jpg" class="portfolio-img" style="width:100%" alt="Certificate 1">
         </div>
         <div class="mySlidesC">
-          <div class="numbertext">2 / 3</div>
-          <img src="cert2.jpg" class="portfolio-img" style="width:100%" alt="Certificate 2">
+          <div class="numbertext">2 / 10</div>
+          <img src="ser2.jpg" class="portfolio-img" style="width:100%" alt="Certificate 2">
         </div>
         <div class="mySlidesC">
-          <div class="numbertext">3 / 3</div>
-          <img src="cert3.jpg" class="portfolio-img" style="width:100%" alt="Certificate 3">
+          <div class="numbertext">3 / 10</div>
+          <img src="ser3.jpg" class="portfolio-img" style="width:100%" alt="Certificate 3">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">4 / 10</div>
+          <img src="ser4.jpg" class="portfolio-img" style="width:100%" alt="Certificate 4">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">5 / 10</div>
+          <img src="ser5.jpg" class="portfolio-img" style="width:100%" alt="Certificate 5">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">6 / 10</div>
+          <img src="se1.jpg" class="portfolio-img" style="width:100%" alt="Certificate 6">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">7 / 10</div>
+          <img src="se2.jpg" class="portfolio-img" style="width:100%" alt="Certificate 7">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">8 / 10</div>
+          <img src="se3.jpg" class="portfolio-img" style="width:100%" alt="Certificate 8">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">9 / 10</div>
+          <img src="se4.jpg" class="portfolio-img" style="width:100%" alt="Certificate 9">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">10 / 10</div>
+          <img src="sre6.jpg" class="portfolio-img" style="width:100%" alt="Certificate 10">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">10 / 10</div>
+          <img src="se7.jpg" class="portfolio-img" style="width:100%" alt="Certificate 11">
+        </div>
+        <div class="mySlidesC">
+          <div class="numbertext">10 / 10</div>
+          <img src="DBLS.jpg" class="portfolio-img" style="width:100%" alt="Certificate 12">
         </div>
 
         <button class="prev" onclick="plusSlidesC(-1)" aria-label="Previous">❮</button>
@@ -289,9 +432,18 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
         <div class="caption-container"><p id="captionC"></p></div>
 
         <div class="row">
-          <div class="column"><img class="demoC column-thumb" src="cert1.jpg" style="width:100%" onclick="currentSlideC(1)" alt="Certificate of Excellence"></div>
-          <div class="column"><img class="demoC column-thumb" src="cert2.jpg" style="width:100%" onclick="currentSlideC(2)" alt="Participation Award"></div>
-          <div class="column"><img class="demoC column-thumb" src="cert3.jpg" style="width:100%" onclick="currentSlideC(3)" alt="Outstanding Achievement"></div>
+          <div class="column"><img class="demoC column-thumb" src="ser1.jpg" style="width:100%" onclick="currentSlideC(1)" alt="Certificate of Taekwondo Achievement Geup 4"></div>
+          <div class="column"><img class="demoC column-thumb" src="ser2.jpg" style="width:100%" onclick="currentSlideC(2)" alt="Certificate of Taekwondo Achievement Geup 5"></div>
+          <div class="column"><img class="demoC column-thumb" src="ser3.jpg" style="width:100%" onclick="currentSlideC(3)" alt="Certificate of Taekwondo Achievement Geup 7"></div>
+          <div class="column"><img class="demoC column-thumb" src="ser4.jpg" style="width:100%" onclick="currentSlideC(4)" alt="Certificate of Taekwondo Achievement Geup 8"></div>
+          <div class="column"><img class="demoC column-thumb" src="ser5.jpg" style="width:100%" onclick="currentSlideC(5)" alt="Certificate of Taekwondo Achievement Geup 9"></div>
+          <div class="column"><img class="demoC column-thumb" src="se1.jpg" style="width:100%" onclick="currentSlideC(6)" alt="Chemistry Challenge UNSRAT Certificate of Participation"></div>
+          <div class="column"><img class="demoC column-thumb" src="se2.jpg" style="width:100%" onclick="currentSlideC(7)" alt="OSN Chemistry Certificate of Participation"></div>
+          <div class="column"><img class="demoC column-thumb" src="se3.jpg" style="width:100%" onclick="currentSlideC(8)" alt="Most Useful/Replicable Category Award Science Fair SDH HV"></div>
+          <div class="column"><img class="demoC column-thumb" src="se4.jpg" style="width:100%" onclick="currentSlideC(9)" alt="Science Fair SDH HV Participation Certificate"></div>
+          <div class="column"><img class="demoC column-thumb" src="sre6.jpg" style="width:100%" onclick="currentSlideC(10)" alt="SDH HV Robotics Certificate of Accomplishment"></div>
+          <div class="column"><img class="demoC column-thumb" src="se7.jpg" style="width:100%" onclick="currentSlideC(11)" alt="SDH HV ANBK Representative Certificate"></div>
+          <div class="column"><img class="demoC column-thumb" src="DBLS.jpg" style="width:100%" onclick="currentSlideC(12)" alt="SDH HV Representative Certificate for DBL Dance Competition Manado"></div>
         </div>
       </div>
       <hr>
@@ -300,34 +452,61 @@ body { background-color:#C9B59C !important; color:#684226 !important; }
 <!-- CONTACT -->
     <section id="contact" class="w3-container w3-padding-32">
       <div class="w3-content contact-card">
-        <h4 class="w3-center"><b>Contact</b></h4>
-        <p class="w3-center">Feel free to reach out — email or phone works best.</p>
-        <p class="w3-center">Email: <a href="mailto:jesselyntandaya@gmail.com">jesselyntandaya@gmail.com</a> | Tel: 08123456789</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center;">
+        <img src="wbb (3).png" style="width:50px; border-radius:6px;">
+        <h4 style="margin: 0;"><b>Contact</b></h4>
+        </div>
+        <p class="w3-center">Feel free to reach out, email, phone, or ig works best.</p>
+        <p class="w3-center">Email: <a href="mailto:jesselyntandaya@gmail.com">jesselyntandaya@gmail.com</a> | Phone: 08123456789 | Instagram: @jejeey</p>
       </div>
       <br>
-      <footer class="w3-container w3-padding-32">
-        <div class="w3-row-padding">
-          <div class="w3-third">
-            <h3 style="color:#fff">INFO</h3>
-            <p style="color:#fff">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+    <footer class="w3-container w3-padding-32" style="background-color: #381c09;">
+  <div class="w3-row-padding">
+
+    <div class="w3-col s12">
+      <h3 style="color:#282222">Personal Statement & Resume</h3>
+      <ul class="w3-ul" style="background:transparent">
+
+        <!-- Personal Statement -->
+        <li class="w3-padding-16" style="background:transparent; height: 500px;">
+          <img src="wbb (1).png"
+               class="w3-left w3-margin-right"
+               style="width:50px;border-radius:6px">
+
+          <span class="w3-large" style="color:#282222">Personal Statement</span><br>
+
+          <!-- Scrollable Preview Box -->
+          <div style="width:90%; height:80%; margin-top:15px; overflow-y:auto; border-radius:8px; border:1px solid #3a2a20;">
+            <iframe 
+              src="https://drive.google.com/file/d/1GSWTXdKuqugPzzKokVvO6NIrhFMUfKJe/preview"
+              style="width:100%; height:100%; border:none;">
+            </iframe>
           </div>
-          <div class="w3-third">
-            <h3 style="color:#fff">BLOG POSTS</h3>
-            <ul class="w3-ul" style="background:transparent">
-              <li class="w3-padding-16" style="background:transparent">
-                <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px;border-radius:6px">
-                <span class="w3-large" style="color:#fff">Lorem</span><br>
-                <span style="color:#fff">Sed mattis nunc</span>
-              </li>
-              <li class="w3-padding-16" style="background:transparent">
-                <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px;border-radius:6px">
-                <span class="w3-large" style="color:#fff">Ipsum</span><br>
-                <span style="color:#fff">Praes tinci sed</span>
-              </li>
-            </ul>
+        </li>
+
+        <!-- Personal Resume -->
+        <li class="w3-padding-16" style="background:transparent; height: 500px;">
+          <img src="wbb (2).png"
+               class="w3-left w3-margin-right"
+               style="width:50px;border-radius:6px">
+
+          <span class="w3-large" style="color:#282222">Personal Resume</span><br>
+
+          <!-- Scrollable Preview Box -->
+          <div style="width:90%; height:80%; margin-top:15px; overflow-y:auto; border-radius:8px; border:1px solid #3a2a20;">
+            <iframe 
+              src="https://drive.google.com/file/d/10enYMMkh5USqMgV7hwmHMrKat1YYbxVG/preview"
+              style="width:100%; height:100%; border:none;">
+            </iframe>
           </div>
-        </div>
-      </footer>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
     </section>
 
   </div>
